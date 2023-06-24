@@ -42,4 +42,4 @@ function selectMenu(index) {
     }
 
 }
-console.log("hiya 3")
+
