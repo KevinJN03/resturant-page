@@ -1,8 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: {
      bundle: path.resolve(__dirname, "./src/index.js")
 
@@ -31,4 +33,17 @@ module.exports = {
           template: "src/template.html"
         }),
       ],
+      optimization: {
+        minimizer: [
+          "...",
+          new ImageMinimizerPlugin({
+            minimizer: {
+              implementation: ImageMinimizerPlugin.squooshMinify,
+              options: {
+                // Your options for `squoosh`
+              },
+            },
+          }),
+        ],
+      },
 }

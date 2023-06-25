@@ -9,19 +9,18 @@ const homeBtn = document.getElementById("home-btn");
 const menuBtn = document.getElementById("menu-btn");
 
 contactBtn.addEventListener("click", function() {
-    console.log("clicked contact")
     selectMenu(2)
     loadContact()
 })
 
 homeBtn.addEventListener("click", function() {
-    console.log("clicked Home")
+    
     selectMenu(0)
     loadHome()
 })
 
 menuBtn.addEventListener("click", function(){
-    console.log("clicked MENU")
+
     selectMenu(1)
     loadMenu()
 })
@@ -29,7 +28,6 @@ menuBtn.addEventListener("click", function(){
 
 function selectMenu(index) {
     const btn = document.querySelectorAll(".btn");
-    console.log(btn)
 
     for(let i = 0; i < btn.length; i++){
         if(i != index){
